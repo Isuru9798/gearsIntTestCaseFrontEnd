@@ -3,7 +3,7 @@
         <ul>
             <ng-container *ngFor="let item of navigation">
                 <li *ngIf="!item.hide">
-                    <a href="">{{ item.name }}</a>
+                    <a href="javascript:void(0)" [routerLink]="[item.url]">{{ item.name }}</a>
                 </li>
             </ng-container>
             <li>

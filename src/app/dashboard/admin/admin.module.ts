@@ -1,17 +1,22 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AuthorsManageComponent } from './components/authors-manage/authors-manage.component';
-import { AuthorBookComponent } from './components/author-book/author-book.component';
+import { AdminServiceService } from './services/admin-service.service';
+import { DataTablesModule } from 'angular-datatables';
+import { FormsModule } from '@angular/forms';
 
 
 
 @NgModule({
   declarations: [
     AuthorsManageComponent,
-    AuthorBookComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    DataTablesModule,
+  ],
+  providers: [
+    AdminServiceService
   ]
 })
 export class AdminModule { }

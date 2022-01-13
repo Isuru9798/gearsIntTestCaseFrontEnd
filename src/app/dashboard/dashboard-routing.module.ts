@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { AuthGuard } from '../guard/auth.guard';
+import { AuthorsManageComponent } from './admin/components/authors-manage/authors-manage.component';
 import { DashboardHomeComponent } from './components/dashboard-home/dashboard-home.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 
@@ -19,7 +20,7 @@ const routes: Routes = [
   {
     path: 'authors',
     canActivate: [AuthGuard],
-    component: DashboardHomeComponent
+    component: AuthorsManageComponent
   },
   {
     path: '**',
