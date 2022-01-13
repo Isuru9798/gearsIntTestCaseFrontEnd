@@ -1,4 +1,4 @@
 export interface AuthorAction {
     author_id: string,
-    action: string
+    action: number
 }

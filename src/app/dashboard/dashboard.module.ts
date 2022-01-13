@@ -6,6 +6,7 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
 import { DashboardRoutingModule } from './dashboard-routing.module';
 import { AdminModule } from './admin/admin.module';
 import { DataTablesModule } from 'angular-datatables';
+import { AuthorModule } from './author/author.module';
 
 
 
@@ -19,6 +20,7 @@ import { DataTablesModule } from 'angular-datatables';
     CommonModule,
     DashboardRoutingModule,
     AdminModule,
+    AuthorModule,
     DataTablesModule
   ]
 })

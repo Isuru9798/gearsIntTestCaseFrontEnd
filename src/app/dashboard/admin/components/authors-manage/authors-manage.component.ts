@@ -1,6 +1,8 @@
 import { AfterViewInit, Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { DataTableDirective } from 'angular-datatables';
+import { env } from 'process';
 import { Subject } from 'rxjs';
+import { environment } from 'src/environments/environment';
 import { Author } from '../../models/author';
 import { AuthorAction } from '../../models/author-action';
 import { AdminServiceService } from '../../services/admin-service.service';
@@ -25,7 +27,7 @@ export class AuthorsManageComponent implements OnInit, OnDestroy, AfterViewInit 
 
   ngOnInit(): void {
     this.dtOptions = this.tableOption();
-    // this.getAuthors();
+    this.getAuthors();
   }
   ngAfterViewInit(): void {
     this.dtTrigger.next();
@@ -40,10 +42,10 @@ export class AuthorsManageComponent implements OnInit, OnDestroy, AfterViewInit 
     };
   }
 
-  active() {
+  active(id: string) {
     let status: AuthorAction = {
-      author_id: '',
-      action: ''
+      author_id: id,
+      action: environment.active
     }
     this.adminService.authorStatus(status).subscribe(
       // The response data
@@ -57,10 +59,10 @@ export class AuthorsManageComponent implements OnInit, OnDestroy, AfterViewInit 
       },
     );
   }
-  deactive() {
+  deactive(id: string) {
     let status: AuthorAction = {
-      author_id: '',
-      action: ''
+      author_id: id,
+      action: environment.deactive
     }
     this.adminService.authorStatus(status).subscribe(
       // The response data

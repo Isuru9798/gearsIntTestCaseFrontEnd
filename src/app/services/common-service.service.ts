@@ -5,11 +5,11 @@ import { environment } from 'src/environments/environment';
 @Injectable({
   providedIn: 'root'
 })
-export class HomeService {
+export class CommonServiceService {
 
   constructor(private http: HttpClient) { }
 
-  getAllBooks() {
-    return this.http.get(environment.apiUrl + 'get-books');
+  imageUpload(formData: FormData) {
+    return this.http.post(environment.apiUrl + 'upload/cover-image', formData);
   }
 }

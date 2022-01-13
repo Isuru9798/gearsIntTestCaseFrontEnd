@@ -6,6 +6,7 @@ import { DataTablesModule } from 'angular-datatables';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AuthenticationModule } from './authentication/authentication.module';
+import { CommonServiceService } from './services/common-service.service';
 import { HomeComponent } from './components/home/home.component';
 import { DashboardModule } from './dashboard/dashboard.module';
 import { httpInterceptProviders } from './http-interceptors';
@@ -15,7 +16,7 @@ import { HomeService } from './services/home.service';
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent,
   ],
   imports: [
     BrowserModule,
@@ -28,6 +29,7 @@ import { HomeService } from './services/home.service';
   providers: [
     HomeService,
     NavigationItem,
+    CommonServiceService,
     httpInterceptProviders
   ],
   bootstrap: [AppComponent]

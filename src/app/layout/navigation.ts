@@ -1,10 +1,6 @@
 import { Injectable } from "@angular/core";
 import { environment } from '../../environments/environment';
 
-// export interface Navigation extends NavigationItem {
-//     children?: NavigationItem[];
-// }
-
 const NavigationItems = [
     {
         id: 'home',
@@ -21,18 +17,18 @@ const NavigationItems = [
         url: '/dashboard/authors',
     },
     {
-        id: 'author-books',
-        name: 'Author Books',
-        hide: true,
-        role: [environment.admin],
-        url: '/dashboard/author-book',
+        id: 'add-books',
+        name: 'Add Books',
+        hide: false,
+        role: [environment.author],
+        url: '/dashboard/add-books',
     },
     {
-        id: 'books',
+        id: 'author-books',
         name: 'Books',
         hide: false,
         role: [environment.author],
-        url: '/dashboard/author/books',
+        url: '/dashboard/author-books',
     }
 ];
 
