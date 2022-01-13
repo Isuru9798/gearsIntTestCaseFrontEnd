@@ -1,0 +1,32 @@
+<h5>Admin Login</h5>
+<form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+    <div>
+        <label for="">First Name</label>
+        <input type="text" placeholder="Enter your first name" formControlName="first_name">
+    </div>
+    <br>
+    <div>
+        <label for="">Last Name</label>
+        <input type="text" placeholder="Enter your last name" formControlName="last_name">
+    </div>
+    <br>
+    <div>
+        <label for="">email</label>
+        <input type="email" placeholder="Enter your email" formControlName="email">
+    </div>
+    <br>
+    <div>
+        <label for="">password</label>
+        <input type="password" placeholder="Enter your password" formControlName="password">
+        <p *ngIf="!registerForm.controls.password.valid && registerForm.controls.password.touched">password must be minimum 6
+            characters</p>
+    </div>
+    <div>
+        <label for="">Confirm password</label>
+        <input type="password" placeholder="Enter your password again" formControlName="password_confirmation">
+        <p *ngIf="registerForm.controls.password_confirmation.value !== registerForm.controls.password.value">
+            password confirmation dose not match</p>
+    </div>
+
+    <button type="submit">Login</button>
+</form>

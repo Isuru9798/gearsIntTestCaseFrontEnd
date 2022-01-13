@@ -1,0 +1,16 @@
+<h5>Admin Login</h5>
+<form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <div>
+        <label for="">email</label>
+        <input type="email" placeholder="Enter your email" formControlName="email">
+    </div>
+    <br>
+    <div>
+        <label for="">password</label>
+        <input type="password" placeholder="Enter your password" formControlName="password">
+        <p *ngIf="!loginForm.controls.password.valid && loginForm.controls.password.touched">password must be minimum 6
+            characters</p>
+    </div>
+
+    <button type="submit">Login</button>
+</form>
