@@ -15,8 +15,8 @@
             <td>{{ author.last_name }}</td>
             <td>{{ (author.status == 1)?'Active':'Deactive' }}</td>
             <td>
-                <button (click)="active()" *ngIf="author.status == 0"> Active </button>
-                <button (click)="deactive()" *ngIf="author.status == 1"> Deactive</button>
+                <button (click)="active(author.id)" *ngIf="author.status == 0"> Active </button>
+                <button (click)="deactive(author.id)" *ngIf="author.status == 1"> Deactive</button>
             </td>
         </tr>
     </tbody>

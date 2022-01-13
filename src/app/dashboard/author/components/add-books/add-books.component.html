@@ -1,0 +1,14 @@
+<form [formGroup]="addBookForm" (ngSubmit)="onSubmit()">
+    <div>
+        <label for="">Book Name</label>
+        <input type="text" placeholder="Enter Book Name" formControlName="book_name">
+    </div>
+    <br>
+    <div>
+        <label for="">image</label><br>
+        <input type="file" name="profile" (change)="onFileSelect($event)" />
+    </div>
+    <img [src]="image" *ngIf="image !== ''" alt="" style="width: 250px;">
+    <br>
+    <button type="submit" style="margin-top: 40px;" [disabled]="!btn_enable">Add Book</button>
+</form>
