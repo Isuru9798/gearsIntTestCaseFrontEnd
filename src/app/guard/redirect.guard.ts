@@ -1,8 +1,6 @@
-import { Location } from '@angular/common';
 import { Injectable } from '@angular/core';
 import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, UrlTree, Router } from '@angular/router';
 import { Observable } from 'rxjs';
-import { environment } from 'src/environments/environment';
 
 
 @Injectable({

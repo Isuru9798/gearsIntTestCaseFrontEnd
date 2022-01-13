@@ -12,6 +12,7 @@ import { DashboardModule } from './dashboard/dashboard.module';
 import { httpInterceptProviders } from './http-interceptors';
 import { NavigationItem } from './layout/navigation';
 import { HomeService } from './services/home.service';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { HomeService } from './services/home.service';
     DashboardModule,
     HttpClientModule,
     DataTablesModule,
+    FormsModule
   ],
   providers: [
     HomeService,

@@ -1,3 +1,21 @@
-<a [routerLink]="['/authentication/signin']" *ngIf="showAuthRoute">Login</a> <br>
-<a [routerLink]="['/authentication/signup']" *ngIf="showAuthRoute">Register</a>
-<p>home works!</p>
+<div style="display: flex;margin: 20px;">
+    <a style="margin-left: 10px;" [routerLink]="['/authentication/signin']" *ngIf="showAuthRoute">Login</a> <br>
+    <a style="margin-left: 10px;" [routerLink]="['/authentication/signup']" *ngIf="showAuthRoute">Register</a>
+    <a style="margin-left: 10px;" [routerLink]="['/dashboard/home']" *ngIf="!showAuthRoute">Dashboard</a>
+</div>
+
+<input type="text" [(ngModel)]="bookName" (keyup)="filterList()" placeholder="Enter book name">
+
+<div class="row">
+    <div class="grid" *ngFor="let book of books">
+        <div class="card">
+            <div>
+                <img src="{{book.image_url}}" alt="">
+            </div>
+            <div>
+                <h4>{{book.book_name}}</h4>
+                <p>{{book.author_f_name}} {{book.author_l_name}} </p>
+            </div>
+        </div>
+    </div>
+</div>

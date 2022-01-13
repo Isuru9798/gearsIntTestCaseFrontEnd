@@ -30,6 +30,8 @@ export class AdminLoginComponent implements OnInit {
       password: new FormControl(null, [Validators.required, Validators.minLength(6)]),
     });
   }
+
+  // submit sunction
   onSubmit() {
     if (
       this.loginForm.get('email').value !== '' &&

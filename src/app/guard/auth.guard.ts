@@ -1,4 +1,3 @@
-import { Location } from '@angular/common';
 import { Injectable } from '@angular/core';
 import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, UrlTree, Router } from '@angular/router';
 import { Observable } from 'rxjs';
@@ -54,7 +53,7 @@ export class AuthGuard implements CanActivate {
           err => {
             if (err.status === 401) {
               localStorage.clear();
-              this.router.navigateByUrl('/signin');
+              this.router.navigateByUrl('/authentication/signin');
             }
           }
         );
