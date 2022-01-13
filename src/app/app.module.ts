@@ -6,6 +6,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AuthenticationModule } from './authentication/authentication.module';
 import { HomeComponent } from './components/home/home.component';
+import { DashboardModule } from './dashboard/dashboard.module';
+import { httpInterceptProviders } from './http-interceptors';
+import { NavigationItem } from './layout/navigation';
+import { HomeService } from './services/home.service';
 
 @NgModule({
   declarations: [
@@ -16,9 +20,14 @@ import { HomeComponent } from './components/home/home.component';
     BrowserModule,
     AppRoutingModule,
     AuthenticationModule,
+    DashboardModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [
+    HomeService,
+    NavigationItem,
+    httpInterceptProviders
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

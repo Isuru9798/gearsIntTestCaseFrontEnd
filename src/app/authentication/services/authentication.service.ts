@@ -41,4 +41,12 @@ export class AuthenticationService {
     }
     return this.http.post(environment.apiUrl + 'authentication/admin/login', req, config);
   }
+  getPermission() {
+    const config = {
+      headers: {
+        'Content-type': 'application/json'
+      }
+    }
+    return this.http.get(environment.apiUrl + 'authentication/get-permission', config);
+  }
 }
