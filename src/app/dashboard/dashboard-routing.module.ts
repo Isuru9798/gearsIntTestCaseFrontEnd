@@ -17,6 +17,11 @@ const routes: Routes = [
     component: DashboardHomeComponent
   },
   {
+    path: 'authors',
+    canActivate: [AuthGuard],
+    component: DashboardHomeComponent
+  },
+  {
     path: '**',
     component: PageNotFoundComponent
   },

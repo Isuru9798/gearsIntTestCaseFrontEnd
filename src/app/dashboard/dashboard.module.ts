@@ -4,6 +4,7 @@ import { DashboardComponent } from './dashboard.component';
 import { DashboardHomeComponent } from './components/dashboard-home/dashboard-home.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { DashboardRoutingModule } from './dashboard-routing.module';
+import { AdminModule } from './admin/admin.module';
 
 
 
@@ -15,7 +16,8 @@ import { DashboardRoutingModule } from './dashboard-routing.module';
   ],
   imports: [
     CommonModule,
-    DashboardRoutingModule
+    DashboardRoutingModule,
+    AdminModule
   ]
 })
 export class DashboardModule { }
