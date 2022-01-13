@@ -1,1 +1,23 @@
-<p>authors works!</p>
+<table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="row-border hover" style="width: 100%;">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Status</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let author of authors;  let i=index">
+            <td>{{ i+1 }}</td>
+            <td>{{ author.first_name }}</td>
+            <td>{{ author.last_name }}</td>
+            <td>{{ (author.status == 1)?'Active':'Deactive' }}</td>
+            <td>
+                <button (click)="active()" *ngIf="author.status == 0"> Active </button>
+                <button (click)="deactive()" *ngIf="author.status == 1"> Deactive</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
